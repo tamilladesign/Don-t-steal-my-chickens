@@ -9,12 +9,21 @@ public class DetectPlayerMovement : MonoBehaviour
     private float warningDuration;
     private SpriteRenderer spriteRenderer;
 
+    public GameObject safePrefab;
+    public GameObject warningPrefab;
+    public GameObject dangerPrefab;
+    private GameObject currentVisual;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomTimer();
         // Starting off safe phase (green)
-        spriteRenderer.color = Color.green;
+        if (spriteRenderer != null) spriteRenderer.enabled = false;
+
+        SetRandomTimer();
+        SwapPrefab(safePrefab);
+        
     }
 
     void Update()
@@ -28,7 +37,8 @@ public class DetectPlayerMovement : MonoBehaviour
 
             warningDuration = Random.Range(1f, 2f); // reaction time
 
-            spriteRenderer.color = Color.yellow; // change in visual for warning phase
+            SwapPrefab(warningPrefab);
+            
 
             Debug.Log("WARNING - get ready!");
         }
@@ -45,7 +55,8 @@ public class DetectPlayerMovement : MonoBehaviour
 
                 watchDuration = Random.Range(2f, 5f);
 
-                spriteRenderer.color = Color.red; // change in visual for watching phase
+                SwapPrefab(dangerPrefab);
+                
 
                 Debug.Log("DON'T MOVE");
             }
@@ -68,8 +79,7 @@ public class DetectPlayerMovement : MonoBehaviour
 
                 SetRandomTimer();
 
-                spriteRenderer.color = Color.green; // watching done = back to safe phase visual
-
+                SwapPrefab(safePrefab);
                 Debug.Log("You can move");
             }
         }
@@ -78,5 +88,14 @@ public class DetectPlayerMovement : MonoBehaviour
     void SetRandomTimer()
     {
         timer = Random.Range(3f, 8f);
+    }
+
+    void SwapPrefab(GameObject prefab)
+    {
+        if (prefab == null) return;
+        if (currentVisual != null) Destroy(currentVisual);
+
+        currentVisual = Instantiate(prefab, transform.position, Quaternion.identity, transform);
+        currentVisual.transform.localPosition = Vector2.zero;
     }
 }
