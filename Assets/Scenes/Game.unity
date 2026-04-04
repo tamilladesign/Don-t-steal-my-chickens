@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 103126943}
   - component: {fileID: 103126946}
   - component: {fileID: 103126947}
+  - component: {fileID: 103126948}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -229,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 103126942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.05, y: -0.7, z: 0}
+  m_LocalPosition: {x: 3, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -265,6 +266,18 @@ MonoBehaviour:
   - {fileID: 4004387179624778393, guid: 537caa04dbd8b494b82aff7209d03378, type: 3}
   - {fileID: 9051200561193034439, guid: 7271aa0e7e0180a4fbd26f07c59629b4, type: 3}
   - {fileID: 4436530648408572469, guid: 4afff49ca7a02ad4f923c2c63bc3d945, type: 3}
+--- !u!114 &103126948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103126942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce096ecd909b7945a779adc3fae29a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetPosition
 --- !u!1 &205633513
 GameObject:
   m_ObjectHideFlags: 0
