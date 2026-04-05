@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 1137008679}
   - component: {fileID: 1137008680}
   m_Layer: 0
-  m_Name: GameSountract
+  m_Name: GameSountrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1579,6 +1579,7 @@ MonoBehaviour:
   warningPrefab: {fileID: 5994673374840195516, guid: dd44ae6d55038ca47b2fab6a2787e86b, type: 3}
   dangerPrefab: {fileID: 6177611815727753700, guid: 81d9d649cd9ffd64daa52c3455d025f2, type: 3}
   gameOverPanel: {fileID: 1654946655}
+  musicSource: {fileID: 0}
 --- !u!1 &1654946655
 GameObject:
   m_ObjectHideFlags: 0

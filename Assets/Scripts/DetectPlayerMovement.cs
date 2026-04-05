@@ -17,6 +17,9 @@ public class DetectPlayerMovement : MonoBehaviour
 
     public GameObject gameOverPanel;
 
+    public AudioSource musicSource;
+    public AudioClip gameOverMusic;
+
     void Start()
     {
 
@@ -114,5 +117,8 @@ public class DetectPlayerMovement : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
         Time.timeScale = 0f;
+        musicSource.Stop();
+        musicSource.clip = gameOverMusic;
+        musicSource.Play();
     }
 }
