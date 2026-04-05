@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 103126947}
   - component: {fileID: 103126948}
   - component: {fileID: 103126949}
+  - component: {fileID: 103126950}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -293,6 +294,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 205633515}
   score: 0
+--- !u!114 &103126950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103126942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff0a744946655546a760515faf68189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChildManager
 --- !u!1 &205633513
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,8 +390,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

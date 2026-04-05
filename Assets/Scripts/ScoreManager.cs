@@ -27,6 +27,8 @@ public class ScoreManager : MonoBehaviour
         {
             score++;
             away = false;
+
+            GetComponent<ChildManager>().HideChildren();
             UpdateUI(); 
         }
     }
