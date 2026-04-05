@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float turningPoint = -1.5f;
     private float originalPos = 3f;
     private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private Animator animator;
    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,6 +37,16 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = -speed;
             spriteRenderer.flipX = !spriteRenderer.flipX;
+        }
+
+       
+       if (Input.GetKey(KeyCode.Space))
+        {
+            animator.SetBool("isWalking", true);
+        }
+       else
+        {
+            animator.SetBool("isWalking", false);
         }
     }
 
