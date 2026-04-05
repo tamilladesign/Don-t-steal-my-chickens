@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DetectPlayerMovement : MonoBehaviour
 {
@@ -14,8 +15,14 @@ public class DetectPlayerMovement : MonoBehaviour
     public GameObject dangerPrefab;
     private GameObject currentVisual;
 
+    public GameObject gameOverPanel;
+
     void Start()
     {
+
+        Time.timeScale = 1f;
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomTimer();
         // Starting off safe phase (green)
@@ -67,6 +74,7 @@ public class DetectPlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
+                TriggerGameOver(); 
                 Debug.Log("You moved — GAME OVER");
                 // game over logic here
             }
@@ -97,5 +105,14 @@ public class DetectPlayerMovement : MonoBehaviour
 
         currentVisual = Instantiate(prefab, transform.position, Quaternion.identity, transform);
         currentVisual.transform.localPosition = Vector2.zero;
+    }
+
+    void TriggerGameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        Time.timeScale = 0f;
     }
 }
