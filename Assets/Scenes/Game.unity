@@ -273,7 +273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103126942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fce096ecd909b7945a779adc3fae29a4, type: 3}
   m_Name: 
@@ -1115,6 +1115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f07a7aab1019ed4abe7da57bb1e0381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectPlayerMovement
+  safePrefab: {fileID: 0}
+  warningPrefab: {fileID: 0}
+  dangerPrefab: {fileID: 0}
 --- !u!1 &1350819873
 GameObject:
   m_ObjectHideFlags: 0

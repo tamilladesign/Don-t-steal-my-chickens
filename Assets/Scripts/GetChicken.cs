@@ -4,6 +4,7 @@ using UnityEngine;
 public class GetChicken : MonoBehaviour
 {
     private float turningPoint = -0.4f;
+    private float targetAngle = 180f;
     public GameObject[] chickenPrefabs;
 
 
@@ -21,8 +22,11 @@ public class GetChicken : MonoBehaviour
         
         if (transform.position.x < turningPoint)
         {
-            Instantiate(chickenPrefabs[chickenIndex], transform.position, chickenPrefabs[chickenIndex].transform.rotation);
-            GameObject newChicken = Instantiate(chickenPrefabs[chickenIndex]);
+            GameObject newChicken = Instantiate(
+                chickenPrefabs[chickenIndex],
+                new Vector3(turningPoint, -0.4f, 0),
+                Quaternion.Euler(0, targetAngle, 0)
+                );
             newChicken.transform.SetParent(this.transform);
         }
     }

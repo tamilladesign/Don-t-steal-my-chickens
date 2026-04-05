@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3f;
     public float turningPoint = -1.5f;
-    private Vector2 playerRotation = new Vector2(0, 180);
+    private float originalPos = 3f;
     private SpriteRenderer spriteRenderer;
    
 
@@ -25,8 +25,15 @@ public class PlayerMovement : MonoBehaviour
        if (transform.position.x < turningPoint)
         {
             speed = -speed;
-            spriteRenderer.flipX = true;
+            //changed so that the direction the fox faces will always be its opposite when it reaches the coop,
+            //instead of stuck at 1 flip with spriteRenderer.flipX = true;
+            spriteRenderer.flipX = !spriteRenderer.flipX;
             
+        }
+       if (transform.position.x > originalPos)
+        {
+            speed = -speed;
+            spriteRenderer.flipX = !spriteRenderer.flipX;
         }
     }
 
