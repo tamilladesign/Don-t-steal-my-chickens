@@ -42,7 +42,7 @@ public class DetectPlayerMovement : MonoBehaviour
         {
             isWarning = true;
 
-            warningDuration = Random.Range(1f, 2f); // reaction time
+            warningDuration = Random.Range(0.5f, 1f); // reaction time
 
             SwapPrefab(warningPrefab);
             
