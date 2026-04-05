@@ -24,7 +24,7 @@ public class GetChicken : MonoBehaviour
         {
             GameObject newChicken = Instantiate(
                 chickenPrefabs[chickenIndex],
-                new Vector3(turningPoint, -0.4f, 0),
+                new Vector3(turningPoint, -0.65f, 0),
                 Quaternion.Euler(0, targetAngle, 0)
                 );
             newChicken.transform.SetParent(this.transform);
