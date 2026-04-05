@@ -20,6 +20,8 @@ public class DetectPlayerMovement : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip gameOverMusic;
 
+    public AudioSource snoring;
+
     void Start()
     {
 
@@ -33,6 +35,7 @@ public class DetectPlayerMovement : MonoBehaviour
 
         SetRandomTimer();
         SwapPrefab(safePrefab);
+        snoring.Play();
         
     }
 
@@ -51,6 +54,7 @@ public class DetectPlayerMovement : MonoBehaviour
             
 
             Debug.Log("WARNING - get ready!");
+            snoring.Stop();
         }
 
         // During warning
@@ -69,6 +73,7 @@ public class DetectPlayerMovement : MonoBehaviour
                 
 
                 Debug.Log("DON'T MOVE");
+                snoring.Stop();
             }
         }
 
@@ -89,6 +94,8 @@ public class DetectPlayerMovement : MonoBehaviour
                 isWatching = false;
 
                 SetRandomTimer();
+
+                snoring.Play();
 
                 SwapPrefab(safePrefab);
                 Debug.Log("You can move");
