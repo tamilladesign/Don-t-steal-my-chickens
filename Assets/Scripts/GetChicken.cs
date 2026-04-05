@@ -7,12 +7,7 @@ public class GetChicken : MonoBehaviour
     private float targetAngle = 180f;
     public GameObject[] chickenPrefabs;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
+    public AudioSource chickenSound;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +23,7 @@ public class GetChicken : MonoBehaviour
                 Quaternion.Euler(0, targetAngle, 0)
                 );
             newChicken.transform.SetParent(this.transform);
+            chickenSound.Play();
         }
     }
 }
